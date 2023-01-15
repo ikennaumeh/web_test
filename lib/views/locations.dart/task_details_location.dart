@@ -1,6 +1,6 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:web_test/views/desktop/small_desktop_view.dart';
+import 'package:web_test/views/desktop/task_details_screen.dart';
 
 class TaskDetailsLocation extends BeamLocation<BeamState> {
   TaskDetailsLocation(RouteInformation routeInformation)
@@ -14,7 +14,7 @@ class TaskDetailsLocation extends BeamLocation<BeamState> {
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) => [
         
-        if (state.pathPatternSegments.contains(':tasksId') && state.pathParameters['tasksId'] != null)          
+        if (state.pathPatternSegments.contains(':tasksId'))          
            BeamPage(
             key: const ValueKey('tasks-details'),
             title: 'Task Details',

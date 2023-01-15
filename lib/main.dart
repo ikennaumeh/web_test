@@ -15,6 +15,7 @@ class MyApp extends ConsumerWidget {
 
   // This widget is the root of your application.
   final routerDelegate = BeamerDelegate(
+    initialPath: '/tasks',
     transitionDelegate: const NoAnimationTransitionDelegate(),
     locationBuilder: (routeInformation, _) => HomeLocation(routeInformation),
   );
@@ -22,7 +23,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     Locale locale = ref.watch(appModelProvider);
-
+    ref.read(taskProviderModel.notifier).getTasks();
     return MaterialApp.router(
       title: 'Task test',
       locale: locale,
@@ -35,6 +36,7 @@ class MyApp extends ConsumerWidget {
       supportedLocales: S.delegate.supportedLocales,
       routeInformationParser: BeamerParser(),
       routerDelegate: routerDelegate,
+       backButtonDispatcher: BeamerBackButtonDispatcher(delegate: routerDelegate)
     );
   }
 }

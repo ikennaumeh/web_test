@@ -5,7 +5,7 @@ import 'package:web_test/views/home/home_wrapper.dart';
 class HomeLocation extends BeamLocation<BeamState> {
   HomeLocation(RouteInformation routeInformation) : super(routeInformation);
   @override
-  List<String> get pathPatterns => ['/*'];
+  List<String> get pathPatterns => ['*'];
 
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) => [

@@ -1,6 +1,6 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:web_test/views/desktop/small_desktop_view.dart';
+import 'package:web_test/views/desktop/tasks_screen.dart';
 
 class TasksLocation extends BeamLocation<BeamState> {
   TasksLocation(RouteInformation routeInformation) : super(routeInformation);
